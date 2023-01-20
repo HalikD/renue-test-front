@@ -1,0 +1,11 @@
+.item-list {
+  max-width: 75vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem;
+  border: 1px solid #888;
+  box-shadow: 0 0 10px #888;
+  border-radius: 1rem;
+}

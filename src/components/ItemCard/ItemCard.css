@@ -1,0 +1,74 @@
+.item-card {
+  max-width: 15rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: bold;
+  border: 1px solid #888;
+}
+
+.item-card-img {
+  width: 100%;
+  height: 10rem;
+  object-fit:contain;
+  transform: scale(0.9);
+}
+
+.item-card-title {
+  display: block;
+  height: 1.5rem;
+  background-color: rgb(223, 192, 255);
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+}
+
+.item-card-count {
+  font-size: 1.2em;
+  cursor: default;
+  height: 1.5rem;
+}
+
+.item-card-price {
+  display: block;
+  height: 1.5rem;
+  background-color:rgb(247, 233, 178);
+  font-size: 1.2em;
+}
+
+.item-card-button {
+  cursor: pointer;
+  height: 1.5rem;
+  background-color: rgb(99, 141, 0);
+  box-shadow: 0 0 5px #888;
+  transition: all 0.3s ease;
+}
+
+.item-card-button:hover {
+  box-shadow: 0 0 10px #888;
+}
+
+.item-card-button[data-freeze=true] {
+  cursor: no-drop;
+  background-color: rgb(183, 205, 17);
+}
+
+.item-card-button:disabled {
+  cursor: no-drop;
+  background-color: rgb(205, 17, 17);
+}
+
+.item-card-img[data-shake=true]{
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+
+  0% {transform: rotate(0deg) scale(0.9);}
+  20% {transform: rotate(-5deg) scale(0.9);}
+  40% {transform: rotate(5deg) scale(0.9);}
+  60% {transform: rotate(-5deg) scale(0.9);}
+  80% {transform: rotate(5deg) scale(0.9);}
+  100% {transform: rotate(0deg) scale(0.9);}
+}
