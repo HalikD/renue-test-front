@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./ItemCard.css";
 
 const ItemCard = ({ item, cash, onBuyItem }) => {
-  const isCanBuy = cash > item.price && item.count;
+  const isCanBuy = cash >= item.price && item.count;
   const [isFreezeBuy, setIsFreezeBuy] = useState(false);
   const [isShakingImg, setIsShakingImg] = useState(false);
-  console.log("render item: " + item.title, " isfreeze:" + isFreezeBuy);
 
   useEffect(() => {
     setIsFreezeBuy(true);
@@ -35,7 +34,7 @@ const ItemCard = ({ item, cash, onBuyItem }) => {
         className="item-card-button"
         disabled={!isCanBuy}
         data-freeze={isFreezeBuy}
-        onClick={() => onBuyItem(item)}
+        onClick={() => (!isFreezeBuy ? onBuyItem(item) : null)}
       />
     </div>
   );

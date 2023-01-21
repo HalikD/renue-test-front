@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { calculateRefund, moneyReceiver } from "../../utils";
+import { calculateRefund } from "../../utils/utils";
+import { startReceiverBalance } from "../../resources/startReceiverBalance";
 import "./Receiver.css";
 
 const Receiver = ({ cash, setCash }) => {
-  const [cashReceiver, setCashReceiver] = useState(moneyReceiver);
+  const [cashReceiver, setCashReceiver] = useState(startReceiverBalance);
   const cashNominals = [50, 100, 500, 1000];
 
   const addCash = (value) => {
@@ -18,14 +19,24 @@ const Receiver = ({ cash, setCash }) => {
       cashReceiver,
       cash
     );
+
     if (!canRefund) {
-      alert("Извините, сдачи нет. Выберите товар на оставшуюся сумму");
+      alert(
+        "Извините, в автомате не осталось сдачи.\n" +
+          "Вы можете докупить товаров на оставшуюся сумму.\n" +
+          "В случае затруднений обратитесь в тех. поддержку по номеру XXX."
+      );
       return;
     }
     setCash(0);
     setCashReceiver(updatedCashReceiver);
-    console.log(coins);
-    console.log(updatedCashReceiver);
+    alert(
+      "Вы получили сдачу в следующих номиналах:\n" +
+        Object.entries(coins)
+          .filter(([_, count]) => count > 0)
+          .map(([nominal, count]) => `${nominal}₽: ${count} ед.`)
+          .join("\n")
+    );
   };
 
   return (
@@ -40,7 +51,11 @@ const Receiver = ({ cash, setCash }) => {
           +{value}
         </button>
       ))}
-      <button className="receiver-button cancel-button" onClick={returnCash}>
+      <button
+        disabled={!cash}
+        className="receiver-button cancel-button"
+        onClick={returnCash}
+      >
         Get your money
       </button>
     </div>

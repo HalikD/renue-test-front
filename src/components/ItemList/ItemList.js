@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import ItemCard from "../ItemCard/ItemCard";
-import { products } from "../../utils";
+import { products } from "../../resources/products";
 import "./ItemList.css";
 
 const ItemList = ({ cash, setCash }) => {
   const [items, setItems] = useState(products);
 
   const onBuyItem = (item) => {
-    //TODO: create expanding window
     setCash(cash - item.price);
     const updatedItems = items.map((p) => {
       if (p.id === item.id) {

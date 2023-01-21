@@ -41,6 +41,11 @@
   background-color: rgb(205, 17, 17);
 }
 
+.cancel-button:disabled {
+  cursor: no-drop;
+  background-color: rgb(206, 17, 17, 0.7);
+}
+
 .receiver-button:hover {
   box-shadow: 0 0 10px #888;
 }
