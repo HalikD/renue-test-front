@@ -22,15 +22,13 @@ const ItemCard = ({ item, userBalance, onBuyItem }) => {
       <span className="item-card-count">
         {item.count ? `IN STOCK: ${item.count}` : "SOLD OUT"}
       </span>
-
       <img
         className="item-card-img"
         data-shake={isShakingImg}
-        src={item.imgUrl}
+        src={"./img/" + item.imgUrl}
         alt={item.imgAlt}
       />
       <span className="item-card-price">{item.price}₽</span>
-
       <button
         className="item-card-button"
         disabled={!isCanBuy}

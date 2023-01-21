@@ -26,6 +26,7 @@ const Machine = ({ userBalance, setUserBalance }) => {
       );
       return;
     }
+
     setUserBalance(0);
     setMachineBalance(updatedMachineBalance);
     alert(

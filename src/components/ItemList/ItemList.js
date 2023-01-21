@@ -6,14 +6,14 @@ import "./ItemList.css";
 const ItemList = ({ userBalance, setUserBalance }) => {
   const [items, setItems] = useState(products);
 
-  const onBuyItem = (item) => {
-    setUserBalance(userBalance - item.price);
-    const updatedItems = items.map((p) => {
-      if (p.id === item.id) {
-        let newCount = p.count - 1;
-        return { ...p, count: newCount };
+  const onBuyItem = (product) => {
+    setUserBalance(userBalance - product.price);
+    const updatedItems = items.map((item) => {
+      if (item.id === product.id) {
+        let newCount = item.count - 1;
+        return { ...item, count: newCount };
       }
-      return p;
+      return item;
     });
     setItems(updatedItems);
   };
