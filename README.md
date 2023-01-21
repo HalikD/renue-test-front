@@ -1,6 +1,6 @@
 # Vending Machine React App
 
-Modeling a vending machine using React
+Modeling a vending machine using React  
 The demo at the link: https://halikd.github.io/renue-test-front
 
 ## How to run this project
