@@ -3,11 +3,11 @@ import ItemCard from "../ItemCard/ItemCard";
 import { products } from "../../resources/products";
 import "./ItemList.css";
 
-const ItemList = ({ cash, setCash }) => {
+const ItemList = ({ userBalance, setUserBalance }) => {
   const [items, setItems] = useState(products);
 
   const onBuyItem = (item) => {
-    setCash(cash - item.price);
+    setUserBalance(userBalance - item.price);
     const updatedItems = items.map((p) => {
       if (p.id === item.id) {
         let newCount = p.count - 1;
@@ -21,7 +21,12 @@ const ItemList = ({ cash, setCash }) => {
   return (
     <div className="item-list">
       {items.map((item) => (
-        <ItemCard key={item.id} item={item} cash={cash} onBuyItem={onBuyItem} />
+        <ItemCard
+          key={item.id}
+          item={item}
+          userBalance={userBalance}
+          onBuyItem={onBuyItem}
+        />
       ))}
     </div>
   );

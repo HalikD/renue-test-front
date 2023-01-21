@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./ItemCard.css";
 
-const ItemCard = ({ item, cash, onBuyItem }) => {
-  const isCanBuy = cash >= item.price && item.count;
+const ItemCard = ({ item, userBalance, onBuyItem }) => {
   const [isFreezeBuy, setIsFreezeBuy] = useState(false);
   const [isShakingImg, setIsShakingImg] = useState(false);
+
+  const isCanBuy = userBalance >= item.price && item.count;
 
   useEffect(() => {
     setIsFreezeBuy(true);

@@ -1,4 +1,4 @@
-.receiver {
+.machine {
   margin: 1rem;
   text-align: center;
   font-weight: bold;
@@ -7,7 +7,7 @@
   border-radius: 1rem;
 }
 
-.receiver-balance {
+.machine-balance {
   display: block;
   width: 70%;
   border-radius: 0.5rem;
@@ -20,7 +20,7 @@
   cursor: default;
 }
 
-.receiver-button {
+.machine-button {
   margin: 1rem;
   width: 5rem;
   height: 3rem;
@@ -34,18 +34,18 @@
   transition: all 0.8s;
 }
 
-.cancel-button {
+.machine-button-change {
   display: block;
   margin: 1rem auto;
   width: 12rem;
   background-color: rgb(205, 17, 17);
 }
 
-.cancel-button:disabled {
+.machine-button-change:disabled {
   cursor: no-drop;
   background-color: rgb(206, 17, 17, 0.7);
 }
 
-.receiver-button:hover {
+.machine-button:hover {
   box-shadow: 0 0 10px #888;
 }

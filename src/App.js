@@ -1,15 +1,15 @@
 import { useState } from "react";
 import "./App.css";
 import ItemList from "./components/ItemList/ItemList";
-import Receiver from "./components/Receiver/Receiver";
+import Machine from "./components/Machine/Machine";
 
 function App() {
-  const [cash, setCash] = useState(0);
+  const [userBalance, setUserBalance] = useState(0);
 
   return (
     <div className="App">
-      <ItemList cash={cash} setCash={setCash} />
-      <Receiver cash={cash} setCash={setCash} />
+      <ItemList userBalance={userBalance} setUserBalance={setUserBalance} />
+      <Machine userBalance={userBalance} setUserBalance={setUserBalance} />
     </div>
   );
 }
