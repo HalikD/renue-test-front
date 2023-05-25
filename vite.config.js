@@ -6,6 +6,7 @@ import fs from 'fs/promises'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/renue-test-front',
   esbuild: {
     loader: 'jsx',
     include: /src\/.*\.js/,
@@ -29,7 +30,6 @@ export default defineConfig({
   // },
   build: {
     minify: true,
-    outDir: 'build',
   },
   plugins: [react()],
   resolve: {
