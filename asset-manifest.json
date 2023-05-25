@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/renue-test-front/static/css/main.e5f18c18.css",
+    "main.js": "/renue-test-front/static/js/main.a64c25af.js",
+    "index.html": "/renue-test-front/index.html",
+    "main.e5f18c18.css.map": "/renue-test-front/static/css/main.e5f18c18.css.map",
+    "main.a64c25af.js.map": "/renue-test-front/static/js/main.a64c25af.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5f18c18.css",
+    "static/js/main.a64c25af.js"
+  ]
+}
