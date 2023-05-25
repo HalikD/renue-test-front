@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { calculateMachineBalance } from "../../utils/utils";
 import { startMachineBalance } from "../../resources/startMachineBalance";
 import "./Machine.css";
